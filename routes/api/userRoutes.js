@@ -8,13 +8,13 @@ const {
 //   deleteCourse,
 } = require('../../controllers/userController.js');
 
-// /api/courses
+// /api/users
 router.route('/').get(getUsers).post(createUser);
 
 // /api/courses/:courseId
-router
-  .route('/:courseId')
-  .get(getSingleUser)
+// router
+//   .route('/:courseId')
+//   .get(getSingleUser)
 //   .put(updateCourse)
 //   .delete(deleteCourse);
 
