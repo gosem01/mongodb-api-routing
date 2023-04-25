@@ -42,7 +42,7 @@ module.exports = {
             ? res.status(404).json({ message: 'No user with that ID' })
             : res.json(user)
       )
-      .then(() => res.json({ message: 'User deleted!' }))
+    //   .then(() => res.json({ message: 'User deleted!' }))
       .catch((err) => res.status(500).json(err));
   },
   // Update a user
@@ -65,7 +65,7 @@ module.exports = {
         console.log(req.body);
         User.findOneAndUpdate(
             { _id: req.params.userId },
-            { $addToSet: { friends: req.body.friendId } },
+            { $addToSet: { friends: req.params.friendId } },
             { runValidators: true, new: true }
         )
         .then((user) =>
